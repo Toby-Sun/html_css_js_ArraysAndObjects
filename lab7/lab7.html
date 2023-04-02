@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="lab7.css">
+		<script src="lab7.js"></script>
+		<title>Wild Rose Country Finance</title>
+	</head>
+	<body>
+		<header>
+			<h1>Wild Rose Country Finance</h1>
+			<h4>Phone:(403) 284-7248 Address: 1301 16 Ave NW, Calgary, AB T2M 0L4</h4>
+			<img src="photos/logo.jpg">
+		</header>
+		<div id="customerform">
+			<form id="register" onsubmit="addToArray(); return false">
+				<label for="currentdate">Current Date:</label><br>
+				<input type="date" id="currentdate" name="currentdate" required>
+				<br><br>
+				<label for="firstname">First Name:</label><br>
+				<input type="text" id="firstname" name="firstname" pattern="[A-Za-z]{1,25}" placeholder="Firstname" required>
+				<br><br>
+				<label for="lastname">Last Name:</label><br>
+				<input type="text" id="lastname" name="lastname" pattern="[A-Za-z]{1,25}" placeholder="Lastname" required>
+				<br><br>
+				<label for="address">Street Address:</label><br>
+				<input type="text" id="address" name="address" placeholder="Address" required>
+				<br><br>
+				<label for="postalcode">Postal Code:</label><br>
+				<input type="text" id="postalcode" name="postalcode" placeholder="T2M 0L4"
+				pattern="[ABCEGHJKLMNPRSTVXY]{1}[0-9]{1}[ABCEGHJKLMNPRSTVWXYZ]{1}[ ]{0,1}[0-9]{1}[ABCEGHJKLMNPRSTVWXYZ]{1}[0-9]{1}" required>
+				<br><br>
+				<input type="radio" id="business" name="phonetype" value="Business" required>
+				<label for="business">Business</label><br>
+				<input type="radio" id="personal" name="phonetype" value="Personal" required>
+				<label for="personal">Personal</label><br>
+				<label for="phone">Phone Number:</label><br>
+				<input type="tel" id="phone" name="phone" placeholder="123-456-7890"
+				pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+				<br><br>
+				<label for="email">Email:</label><br>
+				<input type="email" id="email" name="email" placeholder="username@edu.sait.ca"
+				pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+				<br><br>
+				<p>Are you a current client?</p>
+				<input type="radio" id="yes" name="currentclient" value="yes" required>
+				<label for="yes">Yes</label><br>
+				<input type="radio" id="no" name="currentclient" value="no" required>
+				<label for="no">No</label><br>
+				<p>What is your gender?</p>
+				<input type="radio" id="male" name="gender" value="male" required>
+				<label for="male">Male</label><br>
+				<input type="radio" id="female" name="gender" value="female" required>
+				<label for="female">Female</label><br><br>
+				
+				<label for="age">What is your age? (minimum: 18)</label><br>
+				<input type="number" id="age" name="age" value="age" min="18" required><br>
+				<p>Do you own or rent home?</p>
+				<input type="radio" id="own" name="home" value="own" required>
+				<label for="own">Own</label><br>
+				<input type="radio" id="rent" name="home" value="rent" required>
+				<label for="rent">Rent</label><br><br>
+				<label for="income">What is your Annual Gross Income?</label><br>
+				<input type="number" id="income" name="income" value="income" min="0" required><br>
+				<p>Do you own any of the following?</p>
+				<input type="checkbox" id="vehicle" name="vehicle" value="vehicle">
+				<label for="vehicle">Vehicle</label><br>
+				<input type="checkbox" id="RRSP" name="RRSP" value="RRSP">
+				<label for="RRSP">RRSP</label><br>
+				<input type="checkbox" id="TFSA" name="TFSA" value="TFSA">
+				<label for="TFSA">TFSA</label><br>
+				<input type="checkbox" id="RRIF" name="RRIF" value="RRIF">
+				<label for="RRIF">RRIF</label><br>
+				<input type="submit" value="Submit">
+			</form>
+			<h3><span id="showlist"></span></h3>
+		</div>
+	</body>
+</html>
